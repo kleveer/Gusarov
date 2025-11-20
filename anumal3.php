@@ -1,41 +1,86 @@
-<?php 
-class animal {
+<?php
 
-    protected $hight;
-    public $higth;
-    public $weight; 
-    public $type;
-    public static $humor = false;
-    public function __construct($higth, $weight, $type) {
-        $this->higth = $higth;
+class Animal
+{
+    public function __construct(public $height = 80 ,public $weight = 50,public $type = 'Тигр'){
+        $this->height = $height;
         $this->weight = $weight;
         $this->type = $type;
+
     }
-    public function __destruct() {
-        echo "Объект удаляется";
+    public function sayHello(){
+        echo "<br>Привет! Я $this->type ";
     }
-    public function say() {
-        return "rhrhrh";
+} 
+
+class Bird extends Animal {
+    public $wingspan;
+    public function __construct( $height, $weight, $type, $wingspan){
+        parent::__construct( $height, $weight, $type);
     }
-    public function sayHello() {
-        echo "Привет!  ";
-    }
-    public static function about($animal){
-        return $animal->type;
+    public function sayHello(){
+        parent::sayHello();
+        echo  "у меня крылья $this->wingspan см ";
     }
 }
-$tiger = new animal(70, 120,"Тигр");
-$tiger->type;
-echo animal::about($tiger);
 
-$animal = new animal(100, 80, "Лев" );
-$animal->higth = "100";
-$animal->weight = "49";
-$animal->type = "Лев";
-class bird extends animal {
+class Milkeater extends Animal{
+    public function sayHello(){
+        parent::sayHello();
+        echo ", я млекопетающее.";
+    }
+} 
 
+class NotFlyBird extends Bird{
+    public function sayHello(){
+        parent::sayHello();
+        echo ", я не могу летать ):";
+    }
 }
-$sparrow = new bird(10, 100, "Воробей");
-$sparrow->sayHello(); 
+
+$animals  = [];
+
+$sparrow = new Bird(10, 100, 'Воробей', 50);
+$animals [] = $sparrow;
+$ant = new Animal(3,10,'Муравей');
+$animals [] = $ant;
+$monkey = new Milkeater(50, 40, 'Мартышка');
+$animals [] = $monkey;
+$penguin = new NotFlyBird(50,40, 'Пингвин', 100);
+$animals [] = $penguin;
+
+foreach ($animals as $animal){
+    $animal->sayHello();
+    echo '<br>';
+}
 ?>
-<p><?= animal::$humor ?></p>
+<p>
+
+<!-- <?php 
+echo '<h2> Задание 1</h2>';
+class User{
+    private $name;
+    public function __construct($name){
+        $this->name = $name;
+    }
+    public function getName() {
+        return $this->name;
+    }
+    // public function setName($newName){
+    //     $this->name = $newName;
+    // }
+
+    public function setName($newName){
+        if($newName){
+            $this->name = $newName;
+            return true;
+        }
+        return false;
+    }
+
+}
+$user1 = new User ('Воучик');
+$res = $user1->setName ('Томас');
+echo $res ? 'Имя изменено' : 'Имя не изменено';
+?>
+<p><?= $user1->getName() ?>

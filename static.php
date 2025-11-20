@@ -1,157 +1,97 @@
 <?php
 
-class User
-{
-    private $firstname;
-    private $email;
-    private $lastname;
-
-    public function __construct($firstname, $email, $lastname)
-    {
-        $this->firstname = $firstname;
-        $this->lastname  = $lastname;
-        $this->email     = $email;
+class User {
+    protected $name;
+    protected $surname;
+    protected $email;
+    private $role;
+    
+    public function __construct($name, $surname, $email) {
+        $this->name = $name;
+        $this->surname = $surname;
+        $this->email = $email;
+        $this->role = 'User';
     }
-
-    public function GETNAME()
-    {
-        return $this->firstname;
+    
+    public function getName() {
+        return $this->name;
     }
-
-    public function GETLASTNAME()
-    {
-        return $this->lastname;
+    
+    public function getSurname() {
+        return $this->surname;
     }
-
-    public function GETEMAIL()
-    {
+    
+    public function getEmail() {
         return $this->email;
     }
-
-    public function setname($newname)
-    {
-        if ($this->isNameCorrect($newname)) {
-            $this->firstname = $newname;
-            return true;
-        } else {
-            return false;
-        }
+    
+    public function getRole() {
+        return $this->role;
+    }
+    
+    public static function makeAdmin($user) {
+        $user->role = 'Admin';
     }
 
-    public function setemail($email)
-    {
-        if ($this->isEmailCorrect($email)) {
-            $this->email = $email;
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public function setlastname($lastname)
-    {
-        if ($lastname) {
-            $this->lastname = $lastname;
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public function sayaboutme()
-    {
-        echo "Обновленная информация: " . $this->GETNAME() . " " . $this->GETLASTNAME() . ", email: " . $this->GETEMAIL();
-    }
-
-    private function isNameCorrect($name)
-    {
-        $length = mb_strlen($name);
-        return $length > 0 && $length < 128;
-    }
-
-    private function isEmailCorrect($email)
-    {
-        $atPos  = strpos($email, "@");
-        $dotPos = strpos($email, ".");
-        if ($atPos !== false && $dotPos !== false && $atPos < $dotPos) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    private static $numberStudents;
-    public static function getnumberStudents(){
-        
+    public static function createAdmin($name, $surname, $email) {
+        $admin = new User($name, $surname, $email);
+        $admin->role = 'Admin';
+        return $admin;
     }
 }
 
-$user1 = new User("Marrar", "virgin@gmail.com", "alexnadrovich");
-$user1->setname("xvhkiqq");
-$user1->setemail("xvhkiqq@gmail.com");
-
-$user2 = new User("lev", "lev@gmail.com", "ktmovich");
-$user2->setname(""); 
-
-?>
-
-<p><?php $user1->sayaboutme(); ?></p>
-<p><?php $user2->sayaboutme(); ?></p>
-<p>Общая информация для пользователя 1: <?= $user1->GETNAME() . " " . $user1->GETLASTNAME() . ", email: " . $user1->GETEMAIL(); ?></p>
-<p>Общая информация для пользователя 2: <?= $user2->GETNAME() . " " . $user2->GETLASTNAME() . ", email: " . $user2->GETEMAIL(); ?></p>
-
-<?php
-
-class Student extends User
-{
-    private $course;
-    private $group;
-
-    public function __construct($firstname, $email, $lastname, $course, $group)
-    {
-        parent::__construct($firstname, $email, $lastname);
-        $this->course = $course;
-        $this->group  = $group;
+class Student extends User {
+    private static $numberStudents = 0; 
+    
+    public function __construct($name, $surname, $email) {
+        parent::__construct($name, $surname, $email);
+        self::$numberStudents++;
     }
-
-    public function getcourse()
-    {
-        return $this->course;
+    
+    public static function getNumberStudents() {
+        return self::$numberStudents;
     }
-
-    public function getGroup()
-    {
-        return $this->group;
+    
+    public static function printStudentInfo($student) {
+        echo "Студент: " . $student->getName() . " " . $student->getSurname(),'<br>';
+        echo "Email: " . $student->getEmail(),'<br>';
+        echo "Роль: " . $student->getRole(),'<br>';
+        echo '<br>';
     }
-    public function setCourse($course)
-    {
-        if ($course) {
-            $this->course = $course;
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public function setGroup($group)
-    {
-        if ($group) {
-            $this->group = $group;
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public function sayaboutme()
-    {
-        parent::sayaboutme(); 
-        echo ", курс: " . $this->course . ", группа: " . $this->group;
+    
+    public function __destruct() {
+        self::$numberStudents--;
     }
 }
 
-$student = new Student("marrat", "argunovmarrat@gmail.com", "alexandrovich", 2, "iv1k-24");
+echo "Создаем 5 студентов:",'<br>';
+$student1 = new Student("Марат", "Аргунов", "Marat@gmail.com");
+$student2 = new Student("Лев", "Полуян", "4Lewa@gmail.com");
+$student3 = new Student("Даниил", "Гусаров", "Dan1l@gmail.com");
+$student4 = new Student("Алеша", "Мартынихин", "Alyosha@gmail.com");
+$student5 = new Student("Сергей", "Пэлэгин", "sergey@gmail.com");
+
+echo "Количество студентов: " . Student::getNumberStudents(),'<br>';
+
+echo "Удаляем двух студентов",'<br>';
+unset($student4);
+unset($student5);
+
+echo "Количество студентов после удаления: " . Student::getNumberStudents(),'<br>';
+
+echo "Назначаем студенту роль администратора:",'<br>';
+User::makeAdmin($student1);
+
+echo "Роль студента " . $student1->getName() . ": " . $student1->getRole(),'<br>';
+
+echo "Информация об оставшихся студентах:",'<br>';
+Student::printStudentInfo($student1);
+Student::printStudentInfo($student2);
+Student::printStudentInfo($student3);
+
+echo "Создаем нового администратора:",'<br>';
+$newAdmin = User::createAdmin("Павел","Моноколесо", "Mono@gmail.com");
+echo "Новый администратор: " . $newAdmin->getName() . " " . $newAdmin->getSurname(),'<br>';
+echo "Роль: " . $newAdmin->getRole(),'<br>';
 
 ?>
-
-<p><?php $student->sayaboutme(); ?></p>
-<p>Студент: <?= $student->GETNAME() . " " . $student->GETLASTNAME() . ", email: " . $student->GETEMAIL() . ", курс: " . $student->getcourse() . ", группа: " . $student->getGroup(); ?></p>
