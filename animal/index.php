@@ -24,10 +24,11 @@ foreach ($animals as $animal){
 ?>
 <p>
 
-<!-- <?php 
+<?php 
 echo '<h2> Задание 1</h2>';
 class User{
     private $name;
+    private $animals = [];
     public function __construct($name){
         $this->name = $name;
     }
@@ -45,10 +46,32 @@ class User{
         }
         return false;
     }
-
+    public function sayAboutME() {
+    echo "Меня зовут: $this->name";
+    echo "Мои животные: ";
+    foreach($this->animals  as $animal)  {
+        echo $animal->sayHello(), '<br>';
+    }
 }
+
+public function addAnimal($animal) {
+    $this->animals[] = $animal;
+}
+public static function about($animal) {
+    return $animal->type;
+}
+}
+$animals = [];
+$sparrow = new Bird(10, 10, "Воробей", 50);
+$animals = $sparrow;
+$ant = new Animal(3, 10, "Муравей");
+$animals = $ant;
+$monkey = new Milkeater(50, 40, "Мартышка");
+$animals = $monkey;
+$penguin = new NotFlyBird(50, 40, "Пингвин", 100);
+$animals = $penguin;
 $user1 = new User ('Воучик');
-$res = $user1->setName ('Томас');
-echo $res ? 'Имя изменено' : 'Имя не изменено';
+$user1->addAnimal($sparrow);
+$user1->addAnimal($monkey);
+$user1->sayAboutME();
 ?>
-<p><?= $user1->getName() ?></p> -->

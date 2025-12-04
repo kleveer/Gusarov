@@ -3,6 +3,7 @@ echo '<h2>Приватные свойства</h2>';
 
 class User{
     private $name;
+    private $animals = [];
     public function __construct($name){
         $this->name = $name;
     }
@@ -20,8 +21,19 @@ class User{
         }
         return false;
     }
-
+    public function sayAboutME() {
+    echo "Меня зовут: $this->name";
+    echo "Мои животные: ";
+    foreach($this->animals  as $animal)  {
+        echo $animal->getName(), '<br>';
+    }
 }
+
+public function addAnimal($animal) {
+    $this->animals[] = $animal;
+}
+}
+
 $user1 = new  User ('Воучик');
 $res = $user1->setName ('Томас');
 echo $res ? 'Имя изменено' : 'Имя не изменено';

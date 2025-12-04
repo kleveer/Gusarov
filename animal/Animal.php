@@ -9,4 +9,5 @@ class Animal {
     public function sayHello(){
         echo "<br>Привет! Я $this->type ";
     }
+    
 }
