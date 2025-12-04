@@ -100,8 +100,21 @@ $persons = [
 ];
 
 
+usort($persons, function ($a, $b) {
+    return strcmp($a->getName(), $b->getName());
+});
+
 foreach ($persons as $person) {
     $person->sayAboutMe();
 }
+$winnerIndex = rand(0, count($persons) -1);
+$winner = $persons[$winnerIndex];
 
+echo "<h3>Победитель розыгрыша:</h3>";
+if ($winner instanceof Teacher or $winner instanceof Admin) {
+    $winner->sayAboutMe();
+} else {
+    
+}
 ?>
+
