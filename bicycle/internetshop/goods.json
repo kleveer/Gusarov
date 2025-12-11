@@ -1,0 +1,285 @@
+{
+    "products": [
+        {
+            "name": "Горный велосипед MTB-27.5",
+            "category": "Горные велосипеды",
+            "price": 25000,
+            "brand": "Trek",
+            "imageUrl": "maunt.jpg",
+            "stock": "",
+            "offer": "Скидка 15%"
+        },
+        {
+            "name": "Горный велосипед Hardtail",
+            "category": "Горные велосипеды",
+            "price": 18000,
+            "brand": "Stels",
+            "imageUrl": "5cd43e6be926896fdf9be056fc5555be.jpg",
+            "stock": true,
+            "offer": ""
+        },
+        {
+            "name": "Шоссейный велосипед Carbon",
+            "category": "Шоссейные велосипеды",
+            "price": 45000,
+            "brand": "Specialized",
+            "imageUrl": "i2.jpg",
+            "stock": "",
+            "offer": "Бесплатная доставка"
+        },
+        {
+            "name": "Шоссейный велосипед Aero",
+            "category": "Шоссейные велосипеды",
+            "price": 32000,
+            "brand": "Giant",
+            "imageUrl": "aero1.jpg",
+            "stock": false,
+            "offer": ""
+        },
+        {
+            "name": "Городской велосипед Comfort",
+            "category": "Городские велосипеды",
+            "price": 15000,
+            "brand": "Electra",
+            "imageUrl": "i.jpg",
+            "stock": true,
+            "offer": "Скидка 10%"
+        },
+        {
+            "name": "Городской велосипед Classic",
+            "category": "Городские велосипеды",
+            "price": 12000,
+            "brand": "Scwinn",
+            "imageUrl": "orig.jpg",
+            "stock": true,
+            "offer": ""
+        },
+        {
+            "name": "Велосипедный шлем Aero",
+            "category": "Аксессуары",
+            "price": 3500,
+            "brand": "Giro",
+            "imageUrl": "shlem.jpg",
+            "stock": true,
+            "offer": "Купи 2, получи скидку 20%"
+        },
+        {
+            "name": "Велосипедный фонарь LED",
+            "category": "Аксессуары",
+            "price": 1200,
+            "brand": "Cateye",
+            "imageUrl": "light.jpg",
+            "stock": true,
+            "offer": ""
+        },
+        {
+            "name": "Велосипедный замок U-Lock",
+            "category": "Аксессуары",
+            "price": 2000,
+            "brand": "Kryptonite",
+            "imageUrl": "lock.jpg",
+            "stock": false,
+            "offer": ""
+        },
+        {
+            "name": "Велосипедная сумка на раму",
+            "category": "Аксессуары",
+            "price": 1500,
+            "brand": "Topeak",
+            "imageUrl": "bag.jpg",
+            "stock": true,
+            "offer": "Скидка 5%"
+        },
+        null,
+        {
+            "name": null,
+            "category": null,
+            "price": 0,
+            "brand": null,
+            "imageUrl": null,
+            "stock": null,
+            "offer": null
+        },
+        null,
+        {
+            "name": "Горный велосипед",
+            "category": "Горный велисипед",
+            "price": 12000,
+            "brand": "stels",
+            "imageUrl": "",
+            "stock": 7,
+            "offer": "нет"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 4500,
+            "brand": "Kryptonite",
+            "imageUrl": "",
+            "stock": 5,
+            "offer": "9%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 4500,
+            "brand": "Kryptonite",
+            "imageUrl": "",
+            "stock": 5,
+            "offer": "9%"
+        },
+        {
+            "name": "Велосипедная сумка на раму",
+            "category": "Горные велосипеды",
+            "price": 77000,
+            "brand": "Topeak",
+            "imageUrl": "",
+            "stock": 7,
+            "offer": "Нет"
+        },
+        {
+            "name": "Велосипедная сумка на раму",
+            "category": "Горные велосипеды",
+            "price": 77000,
+            "brand": "Topeak",
+            "imageUrl": "",
+            "stock": 7,
+            "offer": "Нет"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        },
+        {
+            "name": "Горный велосипед",
+            "category": "Горные велосипеды",
+            "price": 7100,
+            "brand": "Giro",
+            "imageUrl": "",
+            "stock": 8,
+            "offer": "5%"
+        }
+    ]
+}

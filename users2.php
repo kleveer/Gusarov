@@ -71,8 +71,20 @@ if (isset($_POST['add'])) {
     file_put_contents('users2.json', json_encode($data));
     echo "Студент {$_POST['name']} добавлен<br><br>";
 }
+try{
+$filecontsct = file_get_contents('users2.json');
 
-$data = json_decode(file_get_contents('users2.json'), true);
+
+    if($filecontsct == false and  json_last_error() !== JSON_ERROR_NONE){
+        throw new Exception("Файл с данными не был найден");
+}
+    $data = json_decode($filecontsct, true);
+    if($data == null and json_last_error() !== JSON_ERROR_NONE){
+        throw new Exception("Файл с данными поврежден");
+    }
+}catch(Exception $ex){
+    echo "Ошибка типа: {$ex->getMEssage()}";
+}
 
 echo "<h3>Все пользователи:</h3>";
 foreach ($data['users'] as $index => $user) {
