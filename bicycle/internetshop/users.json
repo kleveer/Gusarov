@@ -1,0 +1,34 @@
+{
+    "Users": [
+        {
+            "name": "Паша",
+            "login": "pashok3.14ToShok",
+            "password": "CR7mentality",
+            "role": "user"
+        },
+        {
+            "name": "",
+            "login": "pashok3.14ToShok",
+            "password": "CR7mentality",
+            "role": "user"
+        },
+        {
+            "name": "Паша",
+            "login": "pashok3.14ToShok",
+            "password": "CR7mentality",
+            "role": "user"
+        },
+        {
+            "name": "Паша",
+            "login": "pashok3.14ToShok",
+            "password": "CR7mentality",
+            "role": "user"
+        },
+        {
+            "name": "Паша",
+            "login": "pashok3.14ToShok",
+            "password": "CR7mentality",
+            "role": "user"
+        }
+    ]
+}
