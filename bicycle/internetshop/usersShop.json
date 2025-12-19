@@ -1,0 +1,22 @@
+{
+    "Users": [
+        {
+            "name": "Паша",
+            "login": "pashok3.14ToShok",
+            "password": "CR7mentality",
+            "role": "admin"
+        },
+        {
+            "name": "Сергей",
+            "login": "SeGAy",
+            "password": "lkmjnbvc",
+            "role": "user"
+        },
+        {
+            "name": "Марат",
+            "login": "Trubochist",
+            "password": "Mogged",
+            "role": "user"
+        }
+    ]
+}
